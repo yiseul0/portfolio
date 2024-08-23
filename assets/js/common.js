@@ -4,5 +4,7 @@ const common =
             this.events();
         },
         events: function () {
+            portfolio.bindSkills();
+            portfolio.bindItems();
         },
     }
