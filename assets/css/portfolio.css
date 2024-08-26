@@ -39,7 +39,7 @@
 
 /* projects */
 #projects .title {
-    font-weight: 400;
+    font-weight: 600;
 }
 
 #aboutMe {
@@ -77,23 +77,15 @@
     margin-bottom: 0.5rem;
 }
 
-#projects .project_wrap .image-wrap {
-    display: flex;
-    flex-wrap: wrap;
+#projects .project_wrap .images .card {
+    margin-bottom: 1rem;
 }
 
-#projects .project_wrap .image-wrap .card {
-    width: 150px;
-    margin: 0.5rem;
+#projects .project_wrap .images .card:last-child {
+    margin-bottom: 0;
 }
 
-#projects .project_wrap .image-wrap .card .card-body {
-    padding : 0.1rem 1rem;
-}
+#projects .project_wrap .images .card .card-title {
+    font-weight: 500;
 
-#projects .project_wrap .image-wrap .card .card-title {
-    font-weight: 400;
-    font-size: 14px;
-    margin-bottom: 0.1rem;
 }
-

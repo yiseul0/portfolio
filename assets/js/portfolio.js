@@ -18,13 +18,13 @@ const portfolio =
                 html += `<span>${value.company}</span>`;
                 html += `<span>${value.period}</span>`;
                 html += `</div>`;
-                html += portfolio.bindContents(value.contents ?? [])
+                html += portfolio.bindContents(value.contents ?? [], index)
                 html += `</div>`;
             });
 
             $('#projects .project_group').html(html);
         },
-        bindContents: function (contents) {
+        bindContents: function (contents, itemIndex) {
             let html = ``;
             if (contents.length > 0) {
                 html += `<div class="contents">`;
@@ -33,7 +33,7 @@ const portfolio =
                     html += `<p class="title">${value.title}</p>`;
                     html += portfolio.bindBadges(value.skills ?? []);
                     html += `<p class="description">${value.description}</p>`;
-                    html += portfolio.bindImages(value.images ?? []);
+                    html += portfolio.bindImages(value.images ?? [], itemIndex, index);
                     html += `</div>`;
                 });
                 html += `</div>`;
@@ -41,10 +41,16 @@ const portfolio =
 
             return html;
         },
-        bindImages: function (images) {
+        bindImages: function (images, itemIndex, contentsIndex) {
+            let collapseId = `collapseImage${itemIndex}${contentsIndex}`;
             let html = ``;
             if (images.length > 0) {
-                html += `<div class="image-wrap">`;
+                html += `<div class="images mt-2">`;
+                html += `<a class="btn_more" href="javascript:void(0);" data-toggle="collapse"
+                   data-target="#${collapseId}">이미지 더 보기 <i class="fa-solid fa-angle-down"></i></a>`;
+                html += ` <div id="${collapseId}" class="collapse">`;
+                html += `<div class="card">`;
+                html += `<div class="card-body">`;
                 images.forEach(function (value, index, array) {
                     html += `<div class="card">`;
                     html += `<img class="card-img-top" src="${value.image}" />`;
@@ -61,8 +67,11 @@ const portfolio =
                     html += `</div>`;
                 });
                 html += `</div>`;
-                console.log(images);
+                html += `</div>`;
+                html += `</div>`;
+                html += `</div>`;
             }
+            
             return html;
         },
         bindBadges: function (skills) {
@@ -175,7 +184,19 @@ const portfolio =
                             'PHP',
                             'Maria DB',
                         ],
-                        description: "키핏(https://www.keefit.co.kr) 사이트 개발 (운영중단)"
+                        description: "키핏(https://www.keefit.co.kr) 사이트 개발 (운영중단)<br>위사솔루션에서 라라벨으로 이전하였습니다.<br>이용자가 설정한 정보에 따른 제품을 추천합니다.",
+                        images : [
+                            {
+                                title : '메인',
+                                description : '',
+                                image : './assets/images/portfolio/keefit/01.jpg',
+                            },
+                            {
+                                title : '추천 정보 입력',
+                                description : '이용자가 연령대, 성별, 목적, 알러지 유무를 설정하면 해당되는 제품 목록을 보여줍니다.',
+                                image : './assets/images/portfolio/keefit/02.png',
+                            },
+                        ],
                     },
                 ],
             },
@@ -190,7 +211,49 @@ const portfolio =
                             'PHP',
                             'Maria DB',
                         ],
-                        description: "디얼디어(https://deardeer.kr) 매출 현황, 사이트 운영관리, 제휴사 관리, 게시판 관리, 쿠폰 및 할인 혜택 등 운영에 대한 사이트 고도화 및 유지보수<br>디어닷(https://deardot.net) 브랜드 및 상품 소개 사이트 제작 (반응형웹)"
+                        description: "디얼디어(https://deardeer.kr) 매출 현황, 사이트 운영관리, 제휴사 관리, 게시판 관리, 쿠폰 및 할인 혜택 등 운영에 대한 사이트 고도화 및 유지보수<br>디어닷(https://deardot.net) 브랜드 및 상품 소개 사이트 제작 (반응형웹)",
+                        images : [
+                            {
+                                title : '디얼디어 - 메인',
+                                description : '장바구니 : 일반상품, 청첩장으로 장바구니가 분리되어 있습니다.<br>쿠폰 : 중복 사용 쿠폰, 단독 쿠폰을 구분하여 할인 금액을 적용합니다.',
+                                image : './assets/images/portfolio/deardeer/01.jpg',
+                            },
+                            {
+                                title : '디얼디어 - 이미지 크롭',
+                                description : '이용자가 청첩장에 사용할 이미지 크롭하여 업로드할 수 있습니다.',
+                                image : './assets/images/portfolio/deardeer/02.jpg',
+                            },
+                            {
+                                title : '디얼디어 관리자 - 메인',
+                                description : '대시보드를 이용하여 이용 통계 및 문의사항을 확인할 수 있습니다.',
+                                image : './assets/images/portfolio/deardeer/03.jpg',
+                            },
+                            {
+                                title : '디얼디어 관리자 - 운영관리',
+                                description : '쇼핑몰에서 이용하는 기능을 켜고 끌 수 있습니다.<br>설정에 따라 홈페이지의 메뉴 구성이 변경됩니다.',
+                                image : './assets/images/portfolio/deardeer/04.jpg',
+                            },
+                            {
+                                title : '디얼디어 관리자 - 이벤트',
+                                description : '댓글 사용 등 원하는 이벤트를 설정할 수 있습니다.',
+                                image : './assets/images/portfolio/deardeer/05.jpg',
+                            },
+                            {
+                                title : '디어닷 - 메인1',
+                                description : '',
+                                image : './assets/images/portfolio/deardot/01.jpg',
+                            },
+                            {
+                                title : '디어닷 - 메인2',
+                                description : '',
+                                image : './assets/images/portfolio/deardot/01.jpg',
+                            },
+                            {
+                                title : '디어닷 - 모바일',
+                                description : '반응형 웹',
+                                image : './assets/images/portfolio/deardot/03.png',
+                            },
+                        ],
                     },
                     {
                         title: "자사 사이트 운영 및 유지보수",
@@ -198,7 +261,7 @@ const portfolio =
                             'ASP',
                             'MS SQL',
                         ],
-                        description: "바른손카드(http://www.barunsoncard.com/) 사이트 유지보수 및 이벤트, 기획전 페이지 추가 및 페이지 리뉴얼"
+                        description: "바른손카드(http://www.barunsoncard.com/) 사이트 유지보수 및 이벤트, 기획전 페이지 추가 및 페이지 리뉴얼",
                     },
                     {
                         title: "모바일 광고 관리자 사이트 개발",
@@ -207,16 +270,16 @@ const portfolio =
                             'PHP',
                             'MS SQL',
                         ],
-                        description: "모바일 배너 광고주 및 관리 사이트 제작",
+                        description: "모바일 배너 광고주 및 관리 사이트 제작<br>광고주, 담당자 정보, 광고 계약 정보 등록 및 관리",
                         images : [
                             {
                                 title : '메인',
-                                description : '',
+                                description : '광고주별 이용 통계를 확인합니다.',
                                 image : './assets/images/portfolio/barun-ad-admin/01.jpg',
                             },
                             {
                                 title : '광고주 등록',
-                                description : '',
+                                description : '광고주의 정보 및 계약 내용을 등록합니다.',
                                 image : './assets/images/portfolio/barun-ad-admin/02.jpg',
                             },
                         ],
