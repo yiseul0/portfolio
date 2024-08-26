@@ -69,6 +69,10 @@
     display: block;
 }
 
+#projects .project_wrap .period span:first-child {
+    font-size: 1.2rem;
+}
+
 #projects .project_wrap .contents {
     flex: 1 1 40%;
 }

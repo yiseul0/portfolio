@@ -122,7 +122,7 @@ const portfolio =
             // },
             {
                 company: "플라이북",
-                period: "(2020.08~2024.09)",
+                period: "2020.08~2024.09",
                 contents: [
                     {
                         title: "자사 앱 운영 및 유지보수",
@@ -132,7 +132,14 @@ const portfolio =
                             'PHP',
                             'Maria DB',
                         ],
-                        description: "플러터를 이용한 iOS/Android 앱 개발<br>라라벨을 이용한 API 개발"
+                        description: "플러터를 이용한 iOS/Android 앱 개발<br>라라벨을 이용한 API 개발",
+                        images : [
+                            {
+                                title : '앱스토어 스크린샷',
+                                description : '회원 정보 기반 맞춤 책/이용자 추천<br>팔로우 기반 피드<br>도서 구매/대여 결제<br>멤버십 구독 기능',
+                                image : './assets/images/portfolio/flybook/01.png',
+                            },
+                        ],
                     },
                     {
                         title: "플라이북 AI",
@@ -141,7 +148,14 @@ const portfolio =
                             'PHP',
                             'Maria DB',
                         ],
-                        description: "정보나루/도서관 API 연동, 도서 ISBN 및 카테고리별 추천 정보 분류, 입력 정보에 따른 도서 추천 기능 개발, 문자/카카오 알림톡 발송, 결제모듈 연동 등"
+                        description: "정보나루/도서관 API 연동, 도서 ISBN 및 카테고리별 추천 정보 분류, 입력 정보에 따른 도서 추천 기능 개발, 문자/카카오 알림톡 발송, 결제모듈 연동 등",
+                        images : [
+                            {
+                                title : '플라이북 AI 도서추천',
+                                description : '이용자가 선택한 기분/관심사에 따라 책을 추천합니다.<br>API를 이용하여 도서 위치정보 및 대출현황을 제공합니다.',
+                                image : './assets/images/portfolio/flybook/05.png',
+                            },
+                        ],
                     },
                     {
                         title: "자사 사이트 운영 및 유지보수",
@@ -150,13 +164,30 @@ const portfolio =
                             'PHP',
                             'Maria DB',
                         ],
-                        description: "플라이북(https://flybook.kr) 사이트 개발"
+                        description: "플라이북(https://flybook.kr) 사이트 개발",
+                        images : [
+                            {
+                                title : '메인',
+                                description : '',
+                                image : './assets/images/portfolio/flybook/02.png',
+                            },
+                            {
+                                title : '제휴 제안 등록',
+                                description : '제휴제안 문의 글을 등록하면 슬랙봇으로 알림이 발송됩니다.',
+                                image : './assets/images/portfolio/flybook/03.png',
+                            },
+                            {
+                                title : '이벤트',
+                                description : '각종 이벤트 페이지 개발',
+                                image : './assets/images/portfolio/flybook/04.png',
+                            },
+                        ],
                     },
                 ],
             },
             {
                 company: "가치브라더",
-                period: "(2019.10~2020.05)",
+                period: "2019.10~2020.05",
                 contents: [
                     {
                         title: "이엠넷 사이트 및 개발",
@@ -175,7 +206,7 @@ const portfolio =
             },
             {
                 company: "헤럴드",
-                period: "(2019.03~2019.06)",
+                period: "2019.03~2019.06",
                 contents: [
                     {
                         title: "자사 사이트 개발 (PC/Mobile)",
@@ -202,7 +233,7 @@ const portfolio =
             },
             {
                 company: "바른컴퍼니",
-                period: "(2017.08~2019.03)",
+                period: "2017.08~2019.03",
                 contents: [
                     {
                         title: "자사 사이트 운영 및 유지보수",
