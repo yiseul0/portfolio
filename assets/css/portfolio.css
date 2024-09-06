@@ -33,6 +33,15 @@
     flex: 1 1 40%;
 }
 
+#aboutMe .description .intro dt {
+    font-weight: 500;
+}
+
+#aboutMe .description .intro dd {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
 #aboutMe .btns {
     margin-top: 2rem;
 }
